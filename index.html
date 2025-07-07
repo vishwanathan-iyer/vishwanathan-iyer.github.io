@@ -3,9 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Vishwanathan Iyer - Resume</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .header-subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .section-title {
+            font-size: 1.4em;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            background: #ecf0f1;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .job-title {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .job-duration {
+            float: right;
+            color: #7f8c8d;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-item {
+            background-color: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <div class="container">
+        <h1>Vishwanathan Iyer</h1>
+        <p class="header-subtitle">System Software Validation Engineer | M-Tech, Indian Institute of Technology, Bombay</p>
+
+        <div class="section contact-info">
+            <h2 class="section-title">Contact Information</h2>
+            <p><strong>Email:</strong> <a href="mailto:vsiyer91@gmail.com">vsiyer91@gmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/vishwanathan-iyer/" target="_blank">linkedin.com/in/vishwanathan-iyer</a></p>
+            <p><strong>Mobile:</strong> +91-8169961518</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            <h3>System Engineering</h3>
+            <div class="skills-list">
+                <span class="skill-item">Silicon Validation</span>
+                <span class="skill-item">Software Integration</span>
+                <span class="skill-item">Hardware Bring-up</span>
+                <span class="skill-item">Debugging</span>
+                <span class="skill-item">Pre-Silicon Simulation</span>
+                <span class="skill-item">Test Automation</span>
+                <span class="skill-item">Mentoring</span>
+            </div>
+            <h3 style="margin-top: 20px;">Specs and Technologies</h3>
+            <div class="skills-list">
+                <span class="skill-item">DP 2.1</span>
+                <span class="skill-item">HDMI 2.1</span>
+                <span class="skill-item">eDP 1.5</span>
+                <span class="skill-item">Intel DPST</span>
+                <span class="skill-item">H265</span>
+                <span class="skill-item">AV1</span>
+                <span class="skill-item">DirectX</span>
+                <span class="skill-item">Vulkan</span>
+                <span class="skill-item">OpenCL</span>
+                <span class="skill-item">WebGPU</span>
+                <span class="skill-item">Windows Internals</span>
+            </div>
+            <h3 style="margin-top: 20px;">Tools and Languages</h3>
+            <div class="skills-list">
+                <span class="skill-item">Python</span>
+                <span class="skill-item">C</span>
+                <span class="skill-item">Windbg</span>
+                <span class="skill-item">VS Code</span>
+                <span class="skill-item">Git</span>
+                <span class="skill-item">Windows ETW</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Experience</h2>
+            <ul>
+                <li>
+                    <div class="job-title">System Software Validation Engineer - Intel Corporation</div>
+                    <div class="job-duration">July 2017 - Present</div>
+                    <p>Seven years in silicon, platform software and systems validation, shipping high-volume, and high-quality products. Deployed multimedia automation solution across 7 client SKUs, with ~18,000 test runs finding ~1000 unique defects.</p>
+                </li>
+                <li>
+                    <div class="job-title">Sr. Project Technical Assistant - I.I.T. Bombay</div>
+                    <div class="job-duration">July 2013 - July 2017</div>
+                    <p>Four years hands-on in Embedded Systems Design, Development, and Robotics. Worked in the Embedded and Real-time Systems Lab and assisted in designing lab experiments.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <ul>
+                <li>
+                    <div class="job-title">M-Tech Electronic Systems - I.I.T. Bombay</div>
+                    <div class="job-duration">June 2017</div>
+                    <p>CPI: 9.21/10</p>
+                </li>
+                <li>
+                    <div class="job-title">B.E. Electronics - V.E.S.I.T.</div>
+                    <div class="job-duration">June 2013</div>
+                    <p>CPI: 75.50%</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Certifications</h2>
+            <ul>
+                <li>Oracle Cloud Infrastructure 2024 Generative AI Certified Professional</li>
+                <li>AI Everywhere – AI: Idea to Production</li>
+                <li>Advanced Generative AI</li>
+                <li>6.00.1x, Introduction to Computer Science and Programming Using Python</li>
+                <li>C Programming for Embedded Applications</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Awards</h2>
+            <ul>
+                <li>Received 40+ recognitions from multiple stakeholders.</li>
+                <li>Notable awards include SIV Superstar (2022, 2021), SIV Change Agent (2021), and WSS DRA (2020).</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Publications</h2>
+            <ul>
+                <li>[1] D. Ambarish and V. Iyer. Usb audio offload end to end on pre-silicon platform. SWPC, 2018.</li>
+                <li>[3] V. Iyer, R. Angadimani, and F. Fathima. One modular automation for platform. DTTC, 2022.</li>
+                <li>[5] V. Iyer, S. Lawerence, et al. Windows sw debug using machine learning. Platform Analysis and Technology Summit, 2018.</li>
+                <li>And 5 other publications...</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Hobbies</h2>
+            <p>Chess, Football, Rubik's cube, and volunteering at Intel events.</p>
+        </div>
+
+    </div>
 </body>
 </html>
