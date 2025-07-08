@@ -4,20 +4,22 @@ This repository contains the source code for my personal portfolio website, host
 
 ## Overview
 
-This is a simple, single-page static website built with HTML and CSS. It serves as my online resume, providing a comprehensive overview of my professional background.
+This is a single-page static website built with HTML and CSS. It's designed as a professional resume to showcase my skills, experience, and qualifications for job applications and interviews.
 
 ## Content
 
-The website includes the following sections:
+The website is structured as a two-column resume, including the following sections:
 
-*   **Contact Information**
-*   **Skills:** A detailed list of my technical abilities.
-*   **Experience:** A summary of my work history.
-*   **Education:** My academic qualifications.
-*   **Certifications:** Professional certifications I have earned.
-*   **Awards:** Recognition I have received.
-*   **Publications:** A list of my published works.
-*   **Hobbies:** A little bit about my personal interests.
+*   **Left Column:**
+    *   Contact Information
+    *   Skills
+    *   Education
+    *   Hobbies
+*   **Right Column:**
+    *   Summary
+    *   Experience
+    *   Certifications
+    *   Publications
 
 ## Deployment
 
