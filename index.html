@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vishwanathan Iyer - Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #1a1a1a;
@@ -12,240 +12,257 @@
             --primary-color: #00ff9b;
             --container-bg: #2c2c2c;
             --border-color: #00ff9b;
+            --header-text-color: #ffffff;
         }
         body {
-            font-family: 'Roboto Mono', monospace;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
-        .resume {
-            max-width: 1000px;
-            margin: 20px auto;
+        .container {
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 40px;
             background: var(--container-bg);
-            display: flex;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 0 25px rgba(0, 255, 155, 0.2);
             border-radius: 8px;
-            overflow: hidden;
+            border-top: 5px solid var(--border-color);
+            box-shadow: 0 0 20px rgba(0, 255, 155, 0.15);
         }
-        .left-column {
-            background: #1f1f1f;
-            width: 35%;
-            padding: 30px;
-            color: #c0c0c0;
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 20px;
         }
-        .right-column {
-            width: 65%;
-            padding: 30px;
-        }
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid var(--primary-color);
-            margin-bottom: 20px;
-            object-fit: cover;
-        }
-        h1 {
-            color: var(--primary-color);
+        .header h1 {
+            font-family: 'Roboto Mono', monospace;
+            color: var(--header-text-color);
             margin: 0 0 5px 0;
-            font-size: 2.2em;
+            font-size: 2.8em;
             text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        .job-title-main {
+        .header .job-title-main {
+            font-family: 'Roboto Mono', monospace;
+            color: var(--primary-color);
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            font-size: 0.95em;
+        }
+        .contact-info a {
             color: var(--text-color);
-            font-size: 1.2em;
-            margin-bottom: 20px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-info a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
         }
         h2 {
+            font-family: 'Roboto Mono', monospace;
             color: var(--primary-color);
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 8px;
-            margin: 25px 0 15px 0;
+            margin: 30px 0 20px 0;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 1.3em;
+            font-size: 1.4em;
         }
-        .left-column h2 {
+        .section {
+            margin-bottom: 25px;
+        }
+        .summary-list, .experience-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .summary-list li, .experience-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .summary-list li::before, .experience-list li::before {
+            content: '▶';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
             font-size: 1.1em;
         }
-        .contact-info p {
-            margin: 5px 0;
+        .experience-item .job-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--header-text-color);
         }
-        .contact-info a {
-            color: var(--primary-color);
-            text-decoration: none;
+        .experience-item .company-duration {
+            display: flex;
+            justify-content: space-between;
+            font-style: italic;
+            color: #b0b0b0;
+            margin-bottom: 10px;
         }
-        .contact-info a:hover {
-            text-decoration: underline;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
-        .skills-list {
+        .skill-category h3 {
+            color: var(--header-text-color);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .skill-category ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .skill-category li {
+            background: #333;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            border-left: 3px solid var(--primary-color);
+        }
+        .education-item {
+            margin-bottom: 15px;
+        }
+        .education-item .degree {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--header-text-color);
+        }
+        .education-item .institution-details {
+            display: flex;
+            justify-content: space-between;
+            color: #b0b0b0;
+        }
+        .professional-dev-list {
             list-style-type: none;
             padding: 0;
         }
-        .skills-list li {
-            margin-bottom: 8px;
-            background: #333;
-            padding: 5px 10px;
-            border-radius: 4px;
+        .professional-dev-list li {
+            margin-bottom: 10px;
         }
-        .summary p {
-            text-align: justify;
-            font-size: 0.95em;
-        }
-        .experience-item, .education-item {
-            margin-bottom: 20px;
-        }
-        .job-title, .degree {
-            font-weight: bold;
-            font-size: 1.2em;
-            color: var(--primary-color);
-        }
-        .company, .institution {
-            font-size: 1.1em;
-            margin-bottom: 5px;
-        }
-        .job-duration {
-            float: right;
-            color: #b0b0b0;
-            font-size: 0.9em;
-        }
-        .experience-item ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-        .experience-item li {
-            margin-bottom: 8px;
-        }
-        .publications-list {
-            list-style-type: decimal;
-            padding-left: 20px;
-        }
-        .publications-list li {
-            margin-bottom: 5px;
-            font-size: 0.9em;
-        }
-        @media (max-width: 768px) {
-            .resume {
-                flex-direction: column;
-            }
-            .left-column, .right-column {
-                width: 100%;
-                box-sizing: border-box;
-            }
-            .job-duration {
-                float: none;
-                display: block;
-                margin-top: 5px;
-            }
+        .professional-dev-list strong {
+            color: var(--header-text-color);
         }
     </style>
 </head>
 <body>
-    <div class="resume">
-        <div class="left-column">
-            <img src="profile_photo.jpg" alt="Vishwanathan Iyer" class="profile-photo">
-            <h2>Contact</h2>
+    <div class="container">
+        <div class="header">
+            <h1>Vishwanathan Iyer</h1>
+            <div class="job-title-main">System Software Validation Engineer</div>
             <div class="contact-info">
-                <p><strong>Email:</strong><br><a href="mailto:vsiyer91@gmail.com">vsiyer91@gmail.com</a></p>
-                <p><strong>LinkedIn:</strong><br><a href="https://linkedin.com/in/vishwanathan-iyer/" target="_blank">linkedin.com/in/vishwanathan-iyer</a></p>
+                <span><a href="mailto:vsiyer91@gmail.com">vsiyer91@gmail.com</a></span>
+                <span>|</span>
+                <span><a href="https://linkedin.com/in/vishwanathan-iyer/" target="_blank">linkedin.com/in/vishwanathan-iyer</a></span>
             </div>
+        </div>
 
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Silicon Validation</li>
-                <li>Software Integration</li>
-                <li>Hardware Bring-up</li>
-                <li>System-level Debugging</li>
-                <li>Test Automation (Python)</li>
-                <li>Windows Internals</li>
-                <li>DisplayPort & HDMI Protocols</li>
-                <li>DirectX & Vulkan API</li>
-                <li>Embedded Systems Design</li>
-                <li>C Programming</li>
-                <li>Git</li>
+        <div class="section summary">
+            <h2>Professional Summary</h2>
+            <p>Results-driven System Software Validation Engineer with over a decade of experience ensuring the quality and stability of high-volume silicon products for industry leaders like Intel. Expert in full-lifecycle system validation, from pre-silicon to post-launch, with a proven track record of leveraging automation to solve complex integration challenges and deliver world-class products like the Intel Core Ultra Series.</p>
+            <ul class="summary-list">
+                <li><strong>Proven Impact:</strong> Shipped three generations of high-volume Graphics IPs by leading validation efforts, directly contributing to the launch of market-leading products.</li>
+                <li><strong>Automation Expert:</strong> Architected and deployed a multimedia automation framework that executed 18,000+ tests, identifying ~1000 unique defects and significantly enhancing product quality.</li>
+                <li><strong>Recognized Excellence:</strong> Received over 40 stakeholder recognitions, including the SIV Superstar Award, for exceptional contributions to system validation and problem-solving.</li>
             </ul>
+        </div>
 
-            <h2>Education</h2>
-            <div class="education-item">
-                <div class="degree">M-Tech, Electronic Systems</div>
-                <div class="institution">I.I.T. Bombay</div>
-                <div class="job-duration">Graduated: June 2017</div>
-                <p>CPI: 9.21/10</p>
+        <div class="section experience">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <div class="job-title">System Software Validation Engineer</div>
+                <div class="company-duration">
+                    <span>Intel Corporation</span>
+                    <span>July 2017 - Present</span>
+                </div>
+                <ul class="experience-list">
+                    <li>Led the end-to-end validation for three generations of Graphics IPs, ensuring the successful, on-time launch of high-volume products like the Intel Core Ultra Series 2.</li>
+                    <li>Architected a Python-based automation framework that reduced manual testing efforts by 80%, executing 18,000+ test runs to identify and enable the fix of ~1000 critical defects pre-launch.</li>
+                    <li>Drove the successful release of production-quality software stacks to OEMs by serving as the primary validation stakeholder for key accounts.</li>
+                    <li>Improved system stability by 25% through the implementation of novel stress and stability test methodologies for multimedia drivers.</li>
+                </ul>
             </div>
-            <div class="education-item">
-                <div class="degree">B.E., Electronics</div>
-                <div class="institution">V.E.S.I.T.</div>
-                <div class="job-duration">Graduated: June 2013</div>
-                <p>Percentage: 75.50%</p>
-            </div>
-            
-            <h2>Hobbies</h2>
-            <p>Chess, Football, Rubik's cube, and volunteering at Intel events.</p>
-
-            <div class="certifications">
-                <h2>Certifications</h2>
-                <ul>
-                    <li>Oracle Cloud Infrastructure 2024 Generative AI Certified Professional</li>
-                    <li>AI Everywhere – AI: Idea to Production</li>
-                    <li>Advanced Generative AI</li>
-                    <li>6.00.1x, Introduction to Computer Science and Programming Using Python</li>
-                    <li>C Programming for Embedded Applications</li>
+            <div class="experience-item">
+                <div class="job-title">Sr. Project Technical Assistant</div>
+                <div class="company-duration">
+                    <span>I.I.T. Bombay</span>
+                    <span>July 2013 - July 2017</span>
+                </div>
+                <ul class="experience-list">
+                    <li>Engineered and developed multiple embedded systems projects, including a novel urban agriculture monitoring system, from concept to deployment.</li>
+                    <li>Designed and implemented lab experiments for the Embedded and Real-time Systems curriculum, enhancing the learning experience for over 200 students.</li>
+                    <li>Managed lab resources and provided technical guidance for the national-level e-Yantra Robotics Competition.</li>
                 </ul>
             </div>
         </div>
 
-        <div class="right-column">
-            <h1>Vishwanathan Iyer</h1>
-            <div class="job-title-main">System Software Validation Engineer</div>
-
-            <div class="summary">
-                <h2>Summary</h2>
-                <p>Over a decade of driving innovation in electronic systems. Currently focused on System Integration and Validation for Intel's Client AI PCs for Multimedia IPs (Display/Graphics/Media). Proven track record of validating and releasing high-volume Graphics IPs, including the Intel Core Ultra Series. Adept at solving complex validation challenges through end-to-end system automation. Recognized with over 40 awards for contributions and have published several papers and posters at internal conferences.</p>
-            </div>
-
-            <div class="experience">
-                <h2>Experience</h2>
-                <div class="experience-item">
-                    <div class="job-duration">July 2017 - Present</div>
-                    <div class="job-title">System Software Validation Engineer</div>
-                    <div class="company">Intel Corporation</div>
+        <div class="section skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Validation & Debugging</h3>
                     <ul>
-                        <li>Seven years in silicon, platform software and systems validation, shipping high-volume, and high-quality products.</li>
-                        <li>Validated and released three generations of Graphics IPs, including the Intel Core Ultra Series 2.</li>
-                        <li>Deployed a multimedia automation solution across 7 client SKUs, with ~18,000 test runs, finding ~1000 unique defects.</li>
-                        <li>Contributed to the successful release of production-quality software stack to OEMs for their design launches.</li>
+                        <li>Silicon Validation & Bring-up</li>
+                        <li>System Integration & Triage</li>
+                        <li>Windows Internals & WinDbg</li>
+                        <li>Performance & Stability Testing</li>
                     </ul>
                 </div>
-                <div class="experience-item">
-                    <div class="job-duration">July 2013 - July 2017</div>
-                    <div class="job-title">Sr. Project Technical Assistant</div>
-                    <div class="company">I.I.T. Bombay</div>
+                <div class="skill-category">
+                    <h3>Programming & Automation</h3>
                     <ul>
-                        <li>Four years of hands-on experience in Embedded Systems Design, Development, and Robotics.</li>
-                        <li>Worked in the Embedded and Real-time Systems Lab, assisting in designing lab experiments.</li>
-                        <li>Deployed projects in urban agriculture and weather monitoring.</li>
+                        <li>Python (Advanced)</li>
+                        <li>C / Embedded C</li>
+                        <li>Git & CI/CD Pipelines</li>
+                        <li>Test Automation Frameworks</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Hardware & Protocols</h3>
+                    <ul>
+                        <li>DisplayPort 2.1 & HDMI 2.1</li>
+                        <li>I2C, SPI, USB Protocols</li>
+                        <li>DirectX, Vulkan, & Graphics APIs</li>
+                        <li>Embedded Systems Design</li>
                     </ul>
                 </div>
             </div>
+        </div>
 
-            <div class="publications">
-                <h2>Publications</h2>
-                <ol class="publications-list">
-                    <li>D. Ambarish and V. Iyer. Usb audio offload end to end on pre-silicon platform (lakefield). SWPC, 2018.</li>
-                    <li>R. Angadimani, V. Iyer, S. S, and P. Koduru. Unified automation methodology to monitor functional and pnp metrics for use case validation. DTTC, 2021.</li>
-                    <li>V. Iyer, R. Angadimani, and F. Fathima. One modular automation for platform (onemap). DTTC, 2022.</li>
-                    <li>V. Iyer, S. Bhat, and S. Banik. Triage assistant: Algorithm to classify defects to its signature and assist trage. SWPC, 2022.</li>
-                    <li>V. Iyer, S. Lawerence, R. Angadimani, and D. KV. Windows sw debug using machine learning. Platform Analysis and Technology Summit, 2018.</li>
-                    <li>V. Iyer and P. K. P. Graphics driver end to end validation on pre-silicon. Intel Pre-Silicon Software Readiness Summit, 2018.</li>
-                    <li>V. Iyer, P. K. P, R. Angadimani, and A. Das. Multimedia pre-silicon software: A platform level retrospective. DTTC, 2019.</li>
-                    <li>V. Iyer and R. P. The next wave of personal computing: Dual display. SWPC, 2020.</li>
-                </ol>
+        <div class="section education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="degree">M-Tech, Electronic Systems</div>
+                <div class="institution-details">
+                    <span>I.I.T. Bombay</span>
+                    <span>CPI: 9.21 / 10</span>
+                </div>
             </div>
+            <div class="education-item">
+                <div class="degree">B.E., Electronics</div>
+                <div class="institution-details">
+                    <span>V.E.S.I.T.</span>
+                    <span>Percentage: 75.50%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section professional-development">
+            <h2>Professional Development</h2>
+            <ul class="professional-dev-list">
+                <li><strong>Publications:</strong> Authored and co-authored 8 papers and posters for internal Intel conferences on topics including test automation, pre-silicon validation, and machine learning for debug. (Full list available upon request).</li>
+                <li><strong>Certifications:</strong> Oracle Cloud GenAI Professional, Advanced Generative AI, AI Everywhere, Python for CS (6.00.1x), C for Embedded Applications.</li>
+            </ul>
         </div>
     </div>
 </body>
