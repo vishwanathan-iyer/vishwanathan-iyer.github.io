@@ -2,24 +2,17 @@
 
 This repository contains the source code for my personal portfolio website, hosted at [vishwanathan-iyer.github.io](https://vishwanathan-iyer.github.io/).
 
-## Overview
+## Tech Stack
 
-This is a single-page static website built with HTML and CSS. It's designed as a professional resume to showcase my skills, experience, and qualifications for job applications and interviews.
+This website is built with [Astro](https://astro.build/), a modern static site generator. The styling is done with plain CSS.
 
-## Content
+## Development
 
-The website is structured as a two-column resume, including the following sections:
+To run this project locally, follow these steps:
 
-*   **Left Column:**
-    *   Contact Information
-    *   Skills
-    *   Education
-    *   Hobbies
-*   **Right Column:**
-    *   Summary
-    *   Experience
-    *   Certifications
-    *   Publications
+1.  Clone the repository.
+2.  Install dependencies with `npm install`.
+3.  Start the development server with `npm run dev`.
 
 ## Deployment
 
