@@ -226,6 +226,49 @@
             padding-left: 20px
         }
 
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .popup-content {
+            background-color: var(--container-bg);
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .skill-link {
+            cursor: pointer;
+            text-decoration: underline;
+            color: var(--primary-color);
+        }
+
         nav[data-astro-cid-sckkx6r4] {
             background: #1f1f1f;
             padding: 1rem;
@@ -367,32 +410,250 @@
                     <div class="skill-category">
                         <h3>Validation & Debugging</h3>
                         <ul>
-                            <li>Silicon Validation & Bring-up</li>
-                            <li>System Integration & Triage</li>
-                            <li>Windows Internals & WinDbg</li>
-                            <li>Performance & Stability Testing</li>
+                            <li><span class="skill-link" onclick="openPopup('silicon-validation')">Silicon Validation & Bring-up</span></li>
+                            <li><span class="skill-link" onclick="openPopup('system-integration')">System Integration & Triage</span></li>
+                            <li><span class="skill-link" onclick="openPopup('windows-internals')">Windows Internals & WinDbg</span></li>
+                            <li><span class="skill-link" onclick="openPopup('performance-stability')">Performance & Stability Testing</span></li>
                         </ul>
                     </div>
                     <div class="skill-category">
                         <h3>Programming & Automation</h3>
                         <ul>
-                            <li>Python (Advanced)</li>
-                            <li>C / Embedded C</li>
-                            <li>Git & CI/CD Pipelines</li>
-                            <li>Test Automation Frameworks</li>
+                            <li><span class="skill-link" onclick="openPopup('python')">Python (Advanced)</span></li>
+                            <li><span class="skill-link" onclick="openPopup('c-embedded')">C / Embedded C</span></li>
+                            <li><span class="skill-link" onclick="openPopup('git-cicd')">Git & CI/CD Pipelines</span></li>
+                            <li><span class="skill-link" onclick="openPopup('test-automation')">Test Automation Frameworks</span></li>
                         </ul>
                     </div>
                     <div class="skill-category">
                         <h3>Hardware & Protocols</h3>
                         <ul>
-                            <li>DisplayPort 2.1 & HDMI 2.1</li>
-                            <li>I2C, SPI, USB Protocols</li>
-                            <li>DirectX, Vulkan, & Graphics APIs</li>
-                            <li>Embedded Systems Design</li>
+                            <li><span class="skill-link" onclick="openPopup('displayport-hdmi')">DisplayPort 2.1 & HDMI 2.1</span></li>
+                            <li><span class="skill-link" onclick="openPopup('i2c-spi-usb')">I2C, SPI, USB Protocols</span></li>
+                            <li><span class="skill-link" onclick="openPopup('directx-vulkan')">DirectX, Vulkan, & Graphics APIs</span></li>
+                            <li><span class="skill-link" onclick="openPopup('embedded-systems')">Embedded Systems Design</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
+
+            <!-- Popups -->
+            <div id="silicon-validation" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('silicon-validation')">&times;</span>
+                    <h2>Silicon Validation & Bring-up</h2>
+                    <ul>
+                        <li><strong>Pre-Silicon Validation:</strong> Discuss the importance of "shifting left" to catch bugs early. Mention experience with emulation and FPGA prototyping to accelerate validation and reduce respins.</li>
+                        <li><strong>Post-Silicon Bring-up:</strong> Describe the systematic process of powering on new silicon, isolating issues, and working with design and verification teams to root-cause failures.</li>
+                        <li><strong>AI/ML in Verification:</strong> Talk about the emerging trend of using AI/ML to predict failures, optimize test scenarios, and automate debugging, showcasing forward-thinking knowledge.</li>
+                        <li><strong>System-Level Validation:</strong> Emphasize understanding of system-level interactions and performance validation, ensuring the chip meets power and performance targets in a real-world environment.</li>
+                    </ul>
+                    <p><strong>Citations:</strong></p>
+                    <ul>
+                        <li><a href="https://www.synopsys.com/verification/emulation.html" target="_blank">Synopsys Emulation</a></li>
+                        <li><a href="https://www.cadence.com/en_US/home/tools/system-verification/formal-and-static-verification.html" target="_blank">Cadence Formal Verification</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="system-integration" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('system-integration')">&times;</span>
+                    <h2>System Integration & Triage</h2>
+                    <ul>
+                        <li><strong>Microservices Architecture:</strong> Explain experience with designing and integrating microservices, focusing on API-driven communication and ensuring data consistency in distributed systems.</li>
+                        <li><strong>Event-Driven Architecture:</strong> Discuss the use of asynchronous, event-driven patterns to create decoupled and resilient systems, and how it improves scalability.</li>
+                        <li><strong>AI-Powered Triage:</strong> Describe how AI and machine learning can be used to analyze issues, predict their impact, and identify root causes faster, reducing manual effort.</li>
+                        <li><strong>Observability and Proactive Monitoring:</strong> Talk about the shift from simple monitoring to observability, gaining deep insights into a system's internal state to proactively address issues.</li>
+                    </ul>
+                    <p><strong>Citations:</strong></p>
+                    <ul>
+                        <li><a href="https://microservices.io/" target="_blank">Microservices.io</a></li>
+                        <li><a href="https://www.redhat.com/en/topics/integration/what-is-event-driven-architecture" target="_blank">Red Hat on Event-Driven Architecture</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="windows-internals" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('windows-internals')">&times;</span>
+                    <h2>Windows Internals & WinDbg</h2>
+                    <ul>
+                        <li><strong>Virtualization-Based Security (VBS):</strong> Explain how Windows uses virtualization to create isolated environments and protect the kernel from malware and exploits.</li>
+                        <li><strong>Time Travel Debugging (TTD):</strong> Discuss the power of TTD in WinDbg to record and "rewind" process execution, making it easier to diagnose complex and hard-to-reproduce bugs.</li>
+                        <li><strong>Kernel-Mode vs. User-Mode Drivers:</strong> Talk about the trend of moving drivers from kernel-mode to user-mode to improve system stability and security.</li>
+                        <li><strong>Advanced Breakpoints and Scripting:</strong> Demonstrate proficiency with advanced WinDbg features like `ba` (break on access) breakpoints and scripting with JavaScript to automate debugging tasks.</li>
+                    </ul>
+                    <p><strong>Citations:</strong></p>
+                    <ul>
+                        <li><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/" target="_blank">Windows Debugger (WinDbg) Documentation</a></li>
+                        <li><a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/virtualization-based-security-vbs" target="_blank">Microsoft on VBS</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="performance-stability" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('performance-stability')">&times;</span>
+                    <h2>Performance & Stability Testing</h2>
+                    <ul>
+                        <li><strong>SRE Principles:</strong> Discuss the application of Site Reliability Engineering (SRE) principles, including defining SLIs/SLOs and using error budgets to balance innovation and reliability.</li>
+                        <li><strong>Chaos Engineering:</strong> Explain how to proactively build resilience by intentionally injecting failures into a system to identify weaknesses before they cause outages.</li>
+                        <li><strong>Continuous Performance Testing:</strong> Describe how to integrate automated performance tests into a CI/CD pipeline to get continuous feedback on the performance impact of code changes.</li>
+                        <li><strong>Stability Testing for Resource Leaks:</strong> Talk about designing long-running stability tests to uncover issues like memory leaks and resource exhaustion under production-like loads.</li>
+                    </ul>
+                    <p><strong>Citations:</strong></p>
+                    <ul>
+                        <li><a href="https://sre.google/" target="_blank">Google SRE</a></li>
+                        <li><a href="https://principlesofchaos.org/" target="_blank">Principles of Chaos Engineering</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="python" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('python')">&times;</span>
+                    <h2>Python (Advanced)</h2>
+                    <ul>
+                        <li><strong>Asynchronous Programming:</strong> Discuss experience with `asyncio` for building high-performance, I/O-bound applications and its advantages over traditional threading.</li>
+                        <li><strong>Metaclasses and Descriptors:</strong> Explain these advanced OOP concepts and how they can be used to create powerful and flexible frameworks and libraries.</li>
+                        <li><strong>Performance Optimization:</strong> Talk about profiling Python code to identify bottlenecks and using tools like Cython to speed up critical sections of code.</li>
+                        <li><strong>Memory Management:</strong> Describe Python's memory management model, including garbage collection, and how to write memory-efficient code.</li>
+                    </ul>
+                    <p><strong>Citations:</strong></p>
+                    <ul>
+                        <li><a href="https://docs.python.org/3/library/asyncio.html" target="_blank">Python asyncio documentation</a></li>
+                        <li><a href="https://realpython.com/" target="_blank">Real Python</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="c-embedded" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('c-embedded')">&times;</span>
+                    <h2>C / Embedded C</h2>
+                    <ul>
+                        <li><strong>IoT and Lightweight Protocols:</strong> Discuss experience with protocols like MQTT and CoAP for connecting embedded devices to the cloud in IoT applications.</li>
+                        <li><strong>Security in Embedded Systems:</strong> Explain the importance of secure boot, cryptography, and hardware security modules (HSMs) in building secure embedded devices.</li>
+                        <li><strong>Modern C and C++ in Embedded:</strong> Talk about the trend of using modern C standards (C11/C18) and C++ in embedded systems, including concepts like RAII and templates.</li>
+                        <li><strong>MISRA C and Functional Safety:</strong> Demonstrate awareness of coding standards like MISRA C and functional safety standards like ISO 26262 for safety-critical systems.</li>
+                    </ul>
+                    <p><strong>Citations:</strong></p>
+                    <ul>
+                        <li><a href="https://www.misra.org.uk/" target="_blank">MISRA</a></li>
+                        <li><a href="https://www.iso.org/standard/68385.html" target="_blank">ISO 26262</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="git-cicd" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('git-cicd')">&times;</span>
+                    <h2>Git & CI/CD Pipelines</h2>
+                    <ul>
+                        <li><strong>Infrastructure as Code (IaC):</strong> Discuss the practice of managing and provisioning infrastructure through code using tools like Terraform, and its role in modern CI/CD.</li>
+                        <li><strong>Advanced Deployment Strategies:</strong> Explain different deployment methods like blue-green and canary deployments to reduce the risk of deploying faulty code.</li>
+                        <li><strong>Pipeline Optimization:</strong> Talk about techniques for speeding up CI/CD pipelines, such as running jobs in parallel and optimizing build and test processes.</li>
+                        <li><strong>Security in CI/CD:</strong> Describe how to integrate security into the CI/CD pipeline (DevSecOps), including practices like Security as Code (SaC) and threat modeling.</li>
+                    </ul>
+                    <p><strong>Citations:</strong></p>
+                    <ul>
+                        <li><a href="https://www.atlassian.com/git/tutorials" target="_blank">Atlassian Git Tutorials</a></li>
+                        <li><a href="https://www.redhat.com/en/topics/devops/what-is-ci-cd" target="_blank">Red Hat on CI/CD</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="test-automation" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('test-automation')">&times;</span>
+                    <h2>Test Automation Frameworks</h2>
+                    <ul>
+                        <li><strong>AI in Test Automation:</strong> Discuss the trend of using AI and machine learning for self-healing tests, predictive analytics, and AI-driven test case generation.</li>
+                        <li><strong>BDD and Keyword-Driven Frameworks:</strong> Explain experience with frameworks like Cucumber (for BDD) and Robot Framework (for keyword-driven testing) and their benefits.</li>
+                        <li><strong>API and Microservices Testing:</strong> Talk about the importance of API testing in modern microservices architectures and tools used for it.</li>
+                        <li><strong>Cloud-Based Testing Platforms:</strong> Describe the use of cloud platforms for scalable and parallel testing across a wide range of browsers and devices.</li>
+                    </ul>
+                    <p><strong>Citations:</strong></p>
+                    <ul>
+                        <li><a href="https://www.selenium.dev/" target="_blank">Selenium</a></li>
+                        <li><a href="https://cucumber.io/" target="_blank">Cucumber</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="displayport-hdmi" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('displayport-hdmi')">&times;</span>
+                    <h2>DisplayPort 2.1 & HDMI 2.1</h2>
+                    <ul>
+                        <li><strong>Bandwidth and Compression:</strong> Explain the bandwidth differences between DisplayPort 2.1 (80 Gbps) and HDMI 2.1 (48 Gbps) and the role of Display Stream Compression (DSC).</li>
+                        <li><strong>Gaming Features:</strong> Discuss key gaming features like Variable Refresh Rate (VRR) and their implementations (G-Sync, FreeSync) on both standards.</li>
+                        <li><strong>Consumer vs. Professional Markets:</strong> Differentiate the target markets, with HDMI's focus on consumer electronics (eARC, CEC) and DisplayPort's on high-performance PCs (MST).</li>
+                        <li><strong>Future Trends:</strong> Talk about the upcoming HDMI 2.2 standard and how it might impact the competitive landscape between the two interfaces.</li>
+                    </ul>
+                    <p><strong>Citations:</strong></p>
+                    <ul>
+                        <li><a href="https://www.vesa.org/displayport-developer/" target="_blank">VESA DisplayPort</a></li>
+                        <li><a href="https://www.hdmi.org/" target="_blank">HDMI Licensing Administrator</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="i2c-spi-usb" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('i2c-spi-usb')">&times;</span>
+                    <h2>I2C, SPI, USB Protocols</h2>
+                    <ul>
+                        <li><strong>I3C Protocol:</strong> Discuss the advantages of the I3C protocol over I2C, including higher speeds, lower power, and backward compatibility.</li>
+                        <li><strong>Quad SPI:</strong> Explain how Quad SPI increases data throughput by using four data lines, and its applications in high-speed memory interfaces.</li>
+                        <li><strong>USB4 and Type-C:</strong> Describe the key features of USB4 (up to 40 Gbps) and the versatility of the USB-C connector, including Power Delivery (PD).</li>
+                        <li><strong>Debugging Techniques:</strong> Talk about practical debugging skills for these protocols, such as using a logic analyzer to troubleshoot communication issues.</li>
+                    </ul>
+                    <p><strong>Citations:</strong></p>
+                    <ul>
+                        <li><a href="https://www.i2c-bus.org/" target="_blank">I2C-Bus.org</a></li>
+                        <li><a href="https://www.usb.org/" target="_blank">USB Implementers Forum</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="directx-vulkan" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('directx-vulkan')">&times;</span>
+                    <h2>DirectX, Vulkan, & Graphics APIs</h2>
+                    <ul>
+                        <li><strong>Low-Level APIs:</strong> Explain the benefits of low-level APIs like DirectX 12 and Vulkan, such as reduced driver overhead and improved multi-threading.</li>
+                        <li><strong>Ray Tracing (DXR):</strong> Discuss the fundamentals of real-time ray tracing and the role of the DXR API in DirectX 12 Ultimate.</li>
+                        <li><strong>Mesh Shaders:</strong> Describe how mesh shaders provide a more flexible and efficient way to process geometry compared to traditional shader pipelines.</li>
+                        <li><strong>Synchronization and Memory Management:</strong> Talk about the explicit control over synchronization and memory in Vulkan and the challenges it presents.</li>
+                    </ul>
+                    <p><strong>Citations:</strong></p>
+                    <ul>
+                        <li><a href="https://devblogs.microsoft.com/directx/" target="_blank">Microsoft DirectX Developer Blog</a></li>
+                        <li><a href="https://www.khronos.org/vulkan/" target="_blank">Khronos Group - Vulkan</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="embedded-systems" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup('embedded-systems')">&times;</span>
+                    <h2>Embedded Systems Design</h2>
+                    <ul>
+                        <li><strong>Edge AI and TinyML:</strong> Discuss the trend of integrating AI and machine learning directly onto embedded devices for real-time data processing.</li>
+                        <li><strong>RTOS and Concurrency:</strong> Explain experience with Real-Time Operating Systems (RTOS) like FreeRTOS, including task scheduling and inter-task communication.</li>
+                        <li><strong>Low-Power Design Techniques:</strong> Talk about methods for minimizing power consumption in battery-powered devices, such as using low-power modes and optimizing software.</li>
+                        <li><strong>Rust in Embedded:</strong> Describe the growing adoption of Rust in embedded systems due to its focus on memory safety and its advantages over C/C++.</li>
+                    </ul>
+                    <p><strong>Citations:</strong></p>
+                    <ul>
+                        <li><a href="https://www.freertos.org/" target="_blank">FreeRTOS</a></li>
+                        <li><a href="https://www.rust-lang.org/what/embedded" target="_blank">Embedded Rust</a></li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="section education">
                 <h2>Education</h2>
                 <div class="education-item">
@@ -455,6 +716,21 @@
             </div>
         </div>
     </main>
+    <script>
+        function openPopup(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function closePopup(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.className === 'popup') {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 
 </html>
