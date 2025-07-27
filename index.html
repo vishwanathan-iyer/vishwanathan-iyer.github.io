@@ -430,14 +430,22 @@
 
             const handleCommand = (command) => {
                 printToTerminal(`${terminalPrompt.textContent}${command}`);
+                terminalInput.disabled = true; // Disable input immediately
+                terminalInput.value = ''; // Clear input immediately
+
+                const commandOutputCallback = () => {
+                    terminalInput.disabled = false; // Re-enable after typing
+                    terminalInput.focus();
+                };
+
                 if (command === 'clear') {
                     terminalOutput.innerHTML = '';
+                    commandOutputCallback(); // Re-enable input for clear command
                 } else if (commands[command]) {
-                    typeToTerminal(commands[command]);
+                    typeToTerminal(commands[command], commandOutputCallback);
                 } else {
-                    typeToTerminal(`-bash: ${command}: command not found`);
+                    typeToTerminal(`-bash: ${command}: command not found`, commandOutputCallback);
                 }
-                terminalInput.value = '';
             };
 
             terminalInput.addEventListener('keydown', (e) => {
