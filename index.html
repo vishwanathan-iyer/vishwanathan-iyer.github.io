@@ -435,7 +435,10 @@
 
                 const commandOutputCallback = () => {
                     terminalInput.disabled = false; // Re-enable after typing
-                    terminalInput.focus();
+                    // Add a small delay before focusing to ensure the input is ready
+                    setTimeout(() => {
+                        terminalInput.focus();
+                    }, 50);
                 };
 
                 if (command === 'clear') {
