@@ -347,10 +347,16 @@
     </main>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            console.log("DOM Content Loaded!");
             const terminalOutput = document.getElementById('terminal-output');
             const terminalInput = document.getElementById('terminal-input');
             const terminalPrompt = document.querySelector('.terminal-prompt');
             const terminal = document.getElementById('terminal');
+
+            console.log("terminalOutput:", terminalOutput);
+            console.log("terminalInput:", terminalInput);
+            console.log("terminalPrompt:", terminalPrompt);
+            console.log("terminal:", terminal);
 
             const commands = {
                 help: 'Available commands: help, about, skills, contact, education, socials, neofetch, clear',
