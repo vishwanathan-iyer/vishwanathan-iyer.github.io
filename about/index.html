@@ -458,16 +458,17 @@
                 <div class="popup-content">
                     <span class="close" onclick="closePopup('windows-internals')">&times;</span>
                     <h2>Windows Internals & WinDbg</h2>
+                    <p>I have extensive experience debugging complex system crashes and graphics-related issues using WinDbg. My expertise includes analyzing memory dumps and using advanced debugging techniques to identify root causes.</p>
                     <ul>
-                        <li><strong>Virtualization-Based Security (VBS):</strong> Explain how Windows uses virtualization to create isolated environments and protect the kernel from malware and exploits.</li>
-                        <li><strong>Time Travel Debugging (TTD):</strong> Discuss the power of TTD in WinDbg to record and "rewind" process execution, making it easier to diagnose complex and hard-to-reproduce bugs.</li>
-                        <li><strong>Kernel-Mode vs. User-Mode Drivers:</strong> Talk about the trend of moving drivers from kernel-mode to user-mode to improve system stability and security.</li>
-                        <li><strong>Advanced Breakpoints and Scripting:</strong> Demonstrate proficiency with advanced WinDbg features like `ba` (break on access) breakpoints and scripting with JavaScript to automate debugging tasks.</li>
+                        <li><strong>Bugcheck 3B (SYSTEM_SERVICE_EXCEPTION):</strong> This typically indicates that an exception happened while executing a routine that transitions from non-privileged to privileged code. It's often caused by dereferencing a NULL pointer or accessing a random incorrect address.</li>
+                        <li><strong>Bugcheck D1 (DRIVER_IRQL_NOT_LESS_OR_EQUAL):</strong> This indicates that a kernel-mode driver attempted to access pageable memory at a process IRQL that was too high. This is usually caused by a faulty driver.</li>
+                        <li><strong>TDR 116/117 (VIDEO_TDR_FAILURE/TIMEOUT_DETECTED):</strong> These indicate that the display driver failed to respond in a timely manner, and an attempt to reset the driver failed. This is a common issue with graphics drivers.</li>
+                        <li><strong>TDR 141 (VIDEO_ENGINE_TIMEOUT_DETECTED):</strong> This bugcheck indicates that one of the display engines failed to respond in a timely fashion.</li>
                     </ul>
+                    <p>My experience in debugging these issues has led to significant improvements in driver stability and overall system reliability.</p>
                     <p><strong>Citations:</strong></p>
                     <ul>
                         <li><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/" target="_blank">Windows Debugger (WinDbg) Documentation</a></li>
-                        <li><a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/virtualization-based-security-vbs" target="_blank">Microsoft on VBS</a></li>
                     </ul>
                 </div>
             </div>
