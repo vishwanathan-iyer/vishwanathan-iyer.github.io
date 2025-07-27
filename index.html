@@ -362,13 +362,6 @@
             </div>
         </div>
     </main>
-    <div style="text-align: center; margin-top: 20px;">
-        <select id="theme-select" style="padding: 8px; border-radius: 5px; background-color: var(--container-bg); color: var(--text-color); border: 1px solid var(--border-color);">
-            <option value="default">Default Theme</option>
-            <option value="dark">Dark Theme</option>
-            <option value="light">Light Theme</option>
-        </select>
-    </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             console.log("DOM Content Loaded!");
@@ -480,35 +473,6 @@
             setPrompt();
             printToTerminal("Welcome to my interactive terminal!");
             printToTerminal("Type 'help' to see a list of available commands.");
-
-            // Theme Switcher
-            const themeSelect = document.getElementById('theme-select');
-            themeSelect.addEventListener('change', (event) => {
-                const selectedTheme = event.target.value;
-                if (selectedTheme === 'dark') {
-                    document.documentElement.style.setProperty('--bg-color', '#121212');
-                    document.documentElement.style.setProperty('--text-color', '#e0e0e0');
-                    document.documentElement.style.setProperty('--primary-color', '#bb86fc');
-                    document.documentElement.style.setProperty('--container-bg', '#1e1e1e');
-                    document.documentElement.style.setProperty('--border-color', '#bb86fc');
-                    document.documentElement.style.setProperty('--header-text-color', '#ffffff');
-                } else if (selectedTheme === 'light') {
-                    document.documentElement.style.setProperty('--bg-color', '#f0f0f0');
-                    document.documentElement.style.setProperty('--text-color', '#333333');
-                    document.documentElement.style.setProperty('--primary-color', '#007bff');
-                    document.documentElement.style.setProperty('--container-bg', '#ffffff');
-                    document.documentElement.style.setProperty('--border-color', '#007bff');
-                    document.documentElement.style.setProperty('--header-text-color', '#000000');
-                } else {
-                    // Default theme
-                    document.documentElement.style.setProperty('--bg-color', '#1a1a1a');
-                    document.documentElement.style.setProperty('--text-color', '#e0e0e0');
-                    document.documentElement.style.setProperty('--primary-color', '#00ff9b');
-                    document.documentElement.style.setProperty('--container-bg', '#2c2c2c');
-                    document.documentElement.style.setProperty('--border-color', '#00ff9b');
-                    document.documentElement.style.setProperty('--header-text-color', '#ffffff');
-                }
-            });
         });
     </script>
 </body>
