@@ -396,29 +396,6 @@
                 clear: ''
             };
 
-            const typeToTerminal = (text, callback) => {
-                let i = 0;
-                const outputDiv = document.createElement('div');
-                terminalOutput.appendChild(outputDiv);
-                
-                terminalInput.disabled = true;
-
-                const typing = setInterval(() => {
-                    if (i < text.length) {
-                        outputDiv.innerHTML += text.charAt(i);
-                        i++;
-                        terminal.scrollTop = terminal.scrollHeight;
-                    } else {
-                        clearInterval(typing);
-                        terminalInput.disabled = false;
-                        terminalInput.focus();
-                        if (callback) {
-                            callback();
-                        }
-                    }
-                }, 20);
-            };
-
             const printToTerminal = (text) => {
                 terminalOutput.innerHTML += `<div>${text}</div>`;
                 terminal.scrollTop = terminal.scrollHeight;
@@ -433,23 +410,22 @@
                 if (command === 'clear') {
                     terminalOutput.innerHTML = '';
                 } else if (commands[command]) {
-                    typeToTerminal(commands[command]);
+                    printToTerminal(commands[command]);
                 } else {
-                    typeToTerminal(`-bash: ${command}: command not found`);
+                    printToTerminal(`-bash: ${command}: command not found`);
                 }
                 terminalInput.value = '';
             };
 
             terminalInput.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' && !terminalInput.disabled) {
+                if (e.key === 'Enter') {
                     handleCommand(terminalInput.value.trim().toLowerCase());
                 }
             });
 
             setPrompt();
-            typeToTerminal("Welcome to my interactive terminal!", () => {
-                typeToTerminal("Type 'help' to see a list of available commands.");
-            });
+            printToTerminal("Welcome to my interactive terminal!");
+            printToTerminal("Type 'help' to see a list of available commands.");
         });
     </script>
 </body>
