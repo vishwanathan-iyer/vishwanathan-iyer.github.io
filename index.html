@@ -33,6 +33,16 @@
             margin: 0;
             padding: 0;
             background-attachment: fixed;
+            animation: background-pan 60s linear infinite;
+        }
+
+        @keyframes background-pan {
+            from {
+                background-position: 0% 0%;
+            }
+            to {
+                background-position: 100% 100%;
+            }
         }
 
         .container {
@@ -203,6 +213,62 @@
             color: var(--header-text-color)
         }
 
+        .professional-dev-list strong {
+            color: var(--header-text-color)
+        }
+
+        .project-card {
+            background: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 0 15px var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .project-card .project-summary {
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .project-card .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .project-card.expanded .project-details {
+            max-height: 500px; /* Adjust as needed */
+            transition: max-height 0.5s ease-in;
+        }
+
+        .project-card .project-details p {
+            margin-bottom: 10px;
+        }
+
+        .project-card .project-details a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .project-card .project-details a:hover {
+            text-decoration: underline;
+        }
+
         details {
             margin-top: 10px
         }
@@ -338,6 +404,30 @@
         <p class="intro" data-astro-cid-j7pv25f6>
             You can learn more about my work in the "About Me" section.
         </p>
+
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>Project Alpha</h3>
+                <p class="project-summary">A brief summary of Project Alpha.</p>
+                <div class="project-details">
+                    <p>Detailed description of Project Alpha. This project involved [key technologies] and achieved [key results].</p>
+                    <p>Technologies used: HTML, CSS, JavaScript</p>
+                    <p><a href="#" target="_blank">View Project</a></p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Project Beta</h3>
+                <p class="project-summary">A brief summary of Project Beta.</p>
+                <div class="project-details">
+                    <p>Detailed description of Project Beta. This project involved [key technologies] and achieved [key results].</p>
+                    <p>Technologies used: Python, Flask</p>
+                    <p><a href="#" target="_blank">View Project</a></p>
+                </div>
+            </div>
+        </div>
+
         <div id="terminal">
             <div id="terminal-output"></div>
             <div class="terminal-line">
@@ -457,6 +547,52 @@
             setPrompt();
             printToTerminal("Welcome to my interactive terminal!");
             printToTerminal("Type 'help' to see a list of available commands.");
+
+            // Project Card Interaction
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    card.classList.toggle('expanded');
+                });
+            });
+
+            // Theme Switcher
+            const themeSwitcher = document.createElement('div');
+            themeSwitcher.innerHTML = `
+                <select id="theme-select" style="margin-top: 20px; padding: 8px; border-radius: 5px; background-color: var(--container-bg); color: var(--text-color); border: 1px solid var(--border-color);">
+                    <option value="default">Default Theme</option>
+                    <option value="dark">Dark Theme</option>
+                    <option value="light">Light Theme</option>
+                </select>
+            `;
+            terminal.parentNode.insertBefore(themeSwitcher, terminal.nextSibling);
+
+            const themeSelect = document.getElementById('theme-select');
+            themeSelect.addEventListener('change', (event) => {
+                const selectedTheme = event.target.value;
+                if (selectedTheme === 'dark') {
+                    document.documentElement.style.setProperty('--bg-color', '#121212');
+                    document.documentElement.style.setProperty('--text-color', '#e0e0e0');
+                    document.documentElement.style.setProperty('--primary-color', '#bb86fc');
+                    document.documentElement.style.setProperty('--container-bg', '#1e1e1e');
+                    document.documentElement.style.setProperty('--border-color', '#bb86fc');
+                    document.documentElement.style.setProperty('--header-text-color', '#ffffff');
+                } else if (selectedTheme === 'light') {
+                    document.documentElement.style.setProperty('--bg-color', '#f0f0f0');
+                    document.documentElement.style.setProperty('--text-color', '#333333');
+                    document.documentElement.style.setProperty('--primary-color', '#007bff');
+                    document.documentElement.style.setProperty('--container-bg', '#ffffff');
+                    document.documentElement.style.setProperty('--border-color', '#007bff');
+                    document.documentElement.style.setProperty('--header-text-color', '#000000');
+                } else {
+                    // Default theme
+                    document.documentElement.style.setProperty('--bg-color', '#1a1a1a');
+                    document.documentElement.style.setProperty('--text-color', '#e0e0e0');
+                    document.documentElement.style.setProperty('--primary-color', '#00ff9b');
+                    document.documentElement.style.setProperty('--container-bg', '#2c2c2c');
+                    document.documentElement.style.setProperty('--border-color', '#00ff9b');
+                    document.documentElement.style.setProperty('--header-text-color', '#ffffff');
+                }
+            });
         });
     </script>
 </body>
