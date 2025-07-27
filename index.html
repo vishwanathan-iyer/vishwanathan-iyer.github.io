@@ -458,9 +458,8 @@
             });
 
             setPrompt();
-            typeToTerminal("Welcome to my interactive terminal!", () => {
-                typeToTerminal("Type 'help' to see a list of available commands.");
-            });
+            printToTerminal("Welcome to my interactive terminal!");
+            printToTerminal("Type 'help' to see a list of available commands.");
         });
     </script>
 </body>
