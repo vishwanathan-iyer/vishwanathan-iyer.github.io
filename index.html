@@ -496,6 +496,7 @@
                     document.documentElement.style.setProperty('--header-text-color', '#ffffff');
                     document.body.style.backgroundImage = 'linear-gradient(rgba(187, 134, 252, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(187, 134, 252, 0.05) 1px, transparent 1px)';
                     document.body.style.animation = 'background-pan 60s linear infinite';
+                    document.querySelector('nav').style.backgroundColor = '#1f1f1f';
                 } else if (selectedTheme === 'light') {
                     document.documentElement.style.setProperty('--bg-color', '#f0f0f0');
                     document.documentElement.style.setProperty('--text-color', '#333333');
@@ -505,6 +506,7 @@
                     document.documentElement.style.setProperty('--header-text-color', '#000000');
                     document.body.style.backgroundImage = 'linear-gradient(rgba(0, 123, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 123, 255, 0.05) 1px, transparent 1px)';
                     document.body.style.animation = 'background-pan 60s linear infinite';
+                    document.querySelector('nav').style.backgroundColor = '#f8f9fa';
                 } else {
                     // Default theme
                     document.documentElement.style.setProperty('--bg-color', '#1a1a1a');
@@ -515,6 +517,7 @@
                     document.documentElement.style.setProperty('--header-text-color', '#ffffff');
                     document.body.style.backgroundImage = 'linear-gradient(rgba(0, 255, 155, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 155, 0.05) 1px, transparent 1px)';
                     document.body.style.animation = 'background-pan 60s linear infinite';
+                    document.querySelector('nav').style.backgroundColor = '#1f1f1f';
                 }
             });
         });
