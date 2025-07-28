@@ -313,6 +313,103 @@
             background-color: var(--primary-color);
             color: #1a1a1a
         }
+
+        .print-mode .container {
+            box-shadow: none !important;
+            border-top: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            max-width: 100% !important;
+        }
+
+        .print-mode nav, .print-mode #theme-select, .print-mode #download-pdf {
+            display: none !important;
+        }
+
+        .print-mode h1, .print-mode h2, .print-mode h3, .print-mode h4, .print-mode h5, .print-mode h6 {
+            color: #000000 !important;
+            page-break-after: avoid;
+        }
+
+        .print-mode h2 {
+            border-bottom: 2px solid #000000 !important;
+        }
+
+        .print-mode .summary-list li:before, .print-mode .experience-list li:before {
+            color: #000000 !important;
+        }
+
+        .print-mode .skill-category li {
+            background: #ffffff !important;
+            border-left: 3px solid #000000 !important;
+        }
+
+        .print-mode .details-content {
+            background: #ffffff !important;
+            border-left: 3px solid #000000 !important;
+        }
+
+        .print-mode details {
+            page-break-inside: avoid;
+        }
+
+        .print-mode details[open] > summary {
+            display: none;
+        }
+
+        .print-mode details > summary {
+            display: none;
+        }
+
+        .print-mode details > div {
+            display: block !important;
+        }
+
+        .print-mode a {
+            color: #000000 !important;
+            text-decoration: none !important;
+        }
+
+        .print-mode .profile-photo {
+            border-color: #000000 !important;
+        }
+
+        .print-mode .header .job-title-main {
+            color: #000000 !important;
+        }
+
+        .print-mode .contact-info a {
+            color: #000000 !important;
+        }
+
+        .print-mode .experience-item .company-duration {
+            color: #000000 !important;
+        }
+
+        .print-mode .education-item .institution-details {
+            color: #000000 !important;
+        }
+
+        .print-mode .professional-dev-list strong {
+            color: #000000 !important;
+        }
+
+        .print-mode .skill-link {
+            color: #000000 !important;
+            text-decoration: none !important;
+        }
+
+        .print-mode .popup {
+            display: none !important;
+        }
+
+        .print-mode body {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            font-family: 'Times New Roman', Times, serif !important;
+            background-image: none !important;
+            animation: none !important;
+        }
     </style>
 </head>
 
