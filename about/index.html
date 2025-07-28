@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="/print.css" media="print">
     <style>
         :root {
             --bg-color: #1a1a1a;
@@ -699,10 +700,12 @@
             const element = document.querySelector('.container');
             const downloadButton = document.getElementById('download-pdf');
             const themeSelect = document.getElementById('theme-select');
+            const detailsElements = document.querySelectorAll('details');
 
-            // Hide the buttons before generating the PDF
+            // Hide the buttons and expand details before generating the PDF
             downloadButton.style.display = 'none';
             themeSelect.style.display = 'none';
+            detailsElements.forEach(el => el.open = true);
 
             const opt = {
                 margin:       0.5,
@@ -713,9 +716,10 @@
             };
 
             html2pdf().from(element).set(opt).save().then(() => {
-                // Show the buttons again after the PDF has been generated and saved
+                // Show the buttons and close details again after the PDF has been generated and saved
                 downloadButton.style.display = 'inline-block';
                 themeSelect.style.display = 'inline-block';
+                detailsElements.forEach(el => el.open = false);
             });
         });
     </script>

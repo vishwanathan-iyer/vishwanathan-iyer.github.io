@@ -1,0 +1,98 @@
+/* print.css */
+
+body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-family: 'Times New Roman', Times, serif !important;
+    background-image: none !important;
+    animation: none !important;
+}
+
+.container {
+    box-shadow: none !important;
+    border-top: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+}
+
+nav, #theme-select, #download-pdf {
+    display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000000 !important;
+    page-break-after: avoid;
+}
+
+h2 {
+    border-bottom: 2px solid #000000 !important;
+}
+
+.summary-list li:before, .experience-list li:before {
+    color: #000000 !important;
+}
+
+.skill-category li {
+    background: #ffffff !important;
+    border-left: 3px solid #000000 !important;
+}
+
+.details-content {
+    background: #ffffff !important;
+    border-left: 3px solid #000000 !important;
+}
+
+details {
+    page-break-inside: avoid;
+}
+
+details[open] > summary {
+    display: none;
+}
+
+details > summary {
+    display: none;
+}
+
+details > div {
+    display: block !important;
+}
+
+a {
+    color: #000000 !important;
+    text-decoration: none !important;
+}
+
+.profile-photo {
+    border-color: #000000 !important;
+}
+
+.header .job-title-main {
+    color: #000000 !important;
+}
+
+.contact-info a {
+    color: #000000 !important;
+}
+
+.experience-item .company-duration {
+    color: #000000 !important;
+}
+
+.education-item .institution-details {
+    color: #000000 !important;
+}
+
+.professional-dev-list strong {
+    color: #000000 !important;
+}
+
+.skill-link {
+    color: #000000 !important;
+    text-decoration: none !important;
+}
+
+.popup {
+    display: none !important;
+}
