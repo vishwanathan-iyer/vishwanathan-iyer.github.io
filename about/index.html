@@ -794,137 +794,40 @@
         });
 
         document.getElementById('download-pdf').addEventListener('click', () => {
-            const element = document.querySelector('.container');
+            const originalElement = document.querySelector('.container');
             const downloadButton = document.getElementById('download-pdf');
             const themeSelect = document.getElementById('theme-select');
-            const detailsElements = document.querySelectorAll('details');
 
-            // Hide the buttons and expand details before generating the PDF
-            downloadButton.style.display = 'none';
-            themeSelect.style.display = 'none';
+            // Prepare for printing
+            document.body.classList.add('print-mode');
+            const detailsElements = document.querySelectorAll('details');
             detailsElements.forEach(el => el.open = true);
 
-            // Clone the element to be printed
-            const elementToPrint = element.cloneNode(true);
+            // Use a timeout to allow the browser to reflow the content
+            setTimeout(() => {
+                const opt = {
+                    margin: 0.5,
+                    filename: 'Vishwanathan_Iyer_Resume.pdf',
+                    image: {
+                        type: 'jpeg',
+                        quality: 0.98
+                    },
+                    html2canvas: {
+                        scale: 2
+                    },
+                    jsPDF: {
+                        unit: 'in',
+                        format: 'letter',
+                        orientation: 'portrait'
+                    }
+                };
 
-            // Create a style element with the print styles
-            const style = document.createElement('style');
-            style.innerHTML = `
-                body {
-                    background-color: #ffffff !important;
-                    color: #000000 !important;
-                    font-family: 'Times New Roman', Times, serif !important;
-                    background-image: none !important;
-                    animation: none !important;
-                }
-
-                .container {
-                    box-shadow: none !important;
-                    border-top: none !important;
-                    padding: 0 !important;
-                    margin: 0 !important;
-                    max-width: 100% !important;
-                }
-
-                nav, #theme-select, #download-pdf {
-                    display: none !important;
-                }
-
-                h1, h2, h3, h4, h5, h6 {
-                    color: #000000 !important;
-                    page-break-after: avoid;
-                }
-
-                h2 {
-                    border-bottom: 2px solid #000000 !important;
-                }
-
-                .summary-list li:before, .experience-list li:before {
-                    color: #000000 !important;
-                }
-
-                .skill-category li {
-                    background: #ffffff !important;
-                    border-left: 3px solid #000000 !important;
-                }
-
-                .details-content {
-                    background: #ffffff !important;
-                    border-left: 3px solid #000000 !important;
-                }
-
-                details {
-                    page-break-inside: avoid;
-                }
-
-                details[open] > summary {
-                    display: none;
-                }
-
-                details > summary {
-                    display: none;
-                }
-
-                details > div {
-                    display: block !important;
-                }
-
-                a {
-                    color: #000000 !important;
-                    text-decoration: none !important;
-                }
-
-                .profile-photo {
-                    border-color: #000000 !important;
-                }
-
-                .header .job-title-main {
-                    color: #000000 !important;
-                }
-
-                .contact-info a {
-                    color: #000000 !important;
-                }
-
-                .experience-item .company-duration {
-                    color: #000000 !important;
-                }
-
-                .education-item .institution-details {
-                    color: #000000 !important;
-                }
-
-                .professional-dev-list strong {
-                    color: #000000 !important;
-                }
-
-                .skill-link {
-                    color: #000000 !important;
-                    text-decoration: none !important;
-                }
-
-                .popup {
-                    display: none !important;
-                }
-            `;
-
-            // Append the style to the cloned element
-            elementToPrint.appendChild(style);
-
-            const opt = {
-                margin:       0.5,
-                filename:     'Vishwanathan_Iyer_Resume.pdf',
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2 },
-                jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-            };
-
-            html2pdf().from(elementToPrint).set(opt).save().then(() => {
-                // Show the buttons and close details again after the PDF has been generated and saved
-                downloadButton.style.display = 'inline-block';
-                themeSelect.style.display = 'inline-block';
-                detailsElements.forEach(el => el.open = false);
-            });
+                html2pdf().from(originalElement).set(opt).save().then(() => {
+                    // Cleanup after printing
+                    document.body.classList.remove('print-mode');
+                    detailsElements.forEach(el => el.open = false);
+                });
+            }, 500); // 500ms delay
         });
     </script>
 </body>
