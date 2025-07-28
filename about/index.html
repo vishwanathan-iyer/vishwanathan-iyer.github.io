@@ -637,7 +637,9 @@
             <option value="dark">Dark Theme</option>
             <option value="light">Light Theme</option>
         </select>
+        <button id="download-pdf" style="padding: 8px 12px; border-radius: 5px; background-color: var(--primary-color); color: var(--bg-color); border: none; cursor: pointer; font-family: 'Roboto Mono', monospace;">Download PDF</button>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         function openPopup(id) {
             document.getElementById(id).style.display = 'block';
@@ -690,6 +692,30 @@
                     document.body.style.backgroundImage = 'linear-gradient(rgba(0, 255, 155, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 155, 0.05) 1px, transparent 1px)';
                     document.body.style.animation = 'background-pan 60s linear infinite';
                 }
+            });
+        });
+
+        document.getElementById('download-pdf').addEventListener('click', () => {
+            const element = document.querySelector('.container');
+            const downloadButton = document.getElementById('download-pdf');
+            const themeSelect = document.getElementById('theme-select');
+
+            // Hide the buttons before generating the PDF
+            downloadButton.style.display = 'none';
+            themeSelect.style.display = 'none';
+
+            const opt = {
+                margin:       0.5,
+                filename:     'Vishwanathan_Iyer_Resume.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 },
+                jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+
+            html2pdf().from(element).set(opt).save().then(() => {
+                // Show the buttons again after the PDF has been generated and saved
+                downloadButton.style.display = 'inline-block';
+                themeSelect.style.display = 'inline-block';
             });
         });
     </script>
