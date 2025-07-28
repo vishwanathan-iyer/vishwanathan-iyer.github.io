@@ -653,6 +653,7 @@
         }
 
         // Theme Switcher
+        document.addEventListener('DOMContentLoaded', () => {
             const themeSelect = document.getElementById('theme-select');
             themeSelect.addEventListener('change', (event) => {
                 const selectedTheme = event.target.value;
@@ -682,7 +683,7 @@
                     document.documentElement.style.setProperty('--container-bg', '#2c2c2c');
                     document.documentElement.style.setProperty('--border-color', '#00ff9b');
                     document.documentElement.style.setProperty('--header-text-color', '#ffffff');
-                    document.body.style.backgroundImage = 'linear-gradient(rgba(0, 255, 155, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 155, 0.05) 1px,.
+                    document.body.style.backgroundImage = 'linear-gradient(rgba(0, 255, 155, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 155, 0.05) 1px, transparent 1px)';
                     document.body.style.animation = 'background-pan 60s linear infinite';
                 }
             });

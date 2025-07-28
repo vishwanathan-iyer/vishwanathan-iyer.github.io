@@ -483,6 +483,7 @@
         });
 
         // Theme Switcher
+        document.addEventListener('DOMContentLoaded', () => {
             const themeSelect = document.getElementById('theme-select');
             themeSelect.addEventListener('change', (event) => {
                 const selectedTheme = event.target.value;
