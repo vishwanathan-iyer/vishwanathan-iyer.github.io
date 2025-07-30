@@ -735,9 +735,8 @@
             <option value="dark">Dark Theme</option>
             <option value="light">Light Theme</option>
         </select>
-        <button id="download-pdf" style="padding: 8px 12px; border-radius: 5px; background-color: var(--primary-color); color: var(--bg-color); border: none; cursor: pointer; font-family: 'Roboto Mono', monospace;">Download PDF</button>
+        <a href="/Vishwanathan_Iyer_Resume.pdf" download="Vishwanathan_Iyer_Resume.pdf" style="padding: 8px 12px; border-radius: 5px; background-color: var(--primary-color); color: var(--bg-color); border: none; cursor: pointer; font-family: 'Roboto Mono', monospace; text-decoration: none;">Download PDF</a>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         function openPopup(id) {
             document.getElementById(id).style.display = 'block';
@@ -791,43 +790,6 @@
                     document.body.style.animation = 'background-pan 60s linear infinite';
                 }
             });
-        });
-
-        document.getElementById('download-pdf').addEventListener('click', () => {
-            const originalElement = document.querySelector('.container');
-            const downloadButton = document.getElementById('download-pdf');
-            const themeSelect = document.getElementById('theme-select');
-
-            // Prepare for printing
-            document.body.classList.add('print-mode');
-            const detailsElements = document.querySelectorAll('details');
-            detailsElements.forEach(el => el.open = true);
-
-            // Use a timeout to allow the browser to reflow the content
-            setTimeout(() => {
-                const opt = {
-                    margin: 0.5,
-                    filename: 'Vishwanathan_Iyer_Resume.pdf',
-                    image: {
-                        type: 'jpeg',
-                        quality: 0.98
-                    },
-                    html2canvas: {
-                        scale: 2
-                    },
-                    jsPDF: {
-                        unit: 'in',
-                        format: 'letter',
-                        orientation: 'portrait'
-                    }
-                };
-
-                html2pdf().from(originalElement).set(opt).save().then(() => {
-                    // Cleanup after printing
-                    document.body.classList.remove('print-mode');
-                    detailsElements.forEach(el => el.open = false);
-                });
-            }, 500); // 500ms delay
         });
     </script>
 </body>
