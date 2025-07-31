@@ -410,6 +410,22 @@
             background-image: none !important;
             animation: none !important;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid var(--primary-color);
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--container-bg);
+            color: var(--header-text-color);
+        }
     </style>
 </head>
 
@@ -436,7 +452,7 @@
                             <summary>View Notable Awards</summary>
                             <div class="details-content">
                             <ul>
-                                <table border="5">
+                                <table border="1" style="border-color: var(--primary-color);">
                                 <thead>
                                     <tr>
                                     <th>Year</th>
