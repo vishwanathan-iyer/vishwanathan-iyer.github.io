@@ -427,10 +427,10 @@
             </div>
             <div class="section summary">
                 <h2>Professional Summary</h2>
-                <p>With over a decade of experience at Intel, I specialize in ensuring the quality and stability of high-volume silicon products like the Intel Core Ultra Series. I manage the full validation lifecycle, from pre-silicon to post-launch, and use automation to solve complex integration challenges.</p>
+                <p>With eight years of experience at Intel, I specialize in ensuring the quality and stability of high-volume silicon products like the Intel Core Ultra Series 2. I have worked in the full validation lifecycle, from pre-silicon to post-launch, and used automation to solve complex validation challenges.</p>
                 <ul class="summary-list">
                     <li>I've led the validation efforts for three generations of high-volume Graphics IPs, helping to launch market-leading products on time.</li>
-                    <li>I built and deployed a multimedia automation framework that ran over 18,000 tests, catching nearly 1,000 defects before launch.</li>
+                    <li>I architected a Python-based automation framework that cut manual testing efforts in half, running over 18,000 tests and identifying ~1,000 pre-launch defects.</li>
                     <li>My contributions to system validation have been recognized by stakeholders over 40 times.
                         <details>
                             <summary>View Notable Awards</summary>
@@ -490,10 +490,10 @@
                     <div class="company-duration"> <span>Intel Corporation</span> <span>July 2017 - Present</span>
                     </div>
                     <ul class="experience-list">
-                        <li>I led the end-to-end validation for three generations of Graphics IPs, ensuring the successful, on-time launch of products like the Intel Core Ultra Series 2.</li>
-                        <li>I architected a Python-based automation framework that cut manual testing efforts in half, running over 18,000 tests and identifying around 1,000 pre-launch defects.</li>
-                        <li>As the primary validation stakeholder for key accounts, I drove the successful release of production-quality software stacks to OEMs.</li>
-                        <li>I also improved system stability by implementing new stress and stability test methods for multimedia drivers.</li>
+                        <li>I led and contributed to the end-to-end validation in the system integration and validation team for three generations of Graphics, Media and Display IPs, ensuring the successful, on-time launch of products like the Intel Core Ultra Series 2.</li>
+                        <li>I have experienced full platform validation cycle from pre-silicon enablement, platform power-on and contributed to hardware and software milestone for the reference validation platforms and OEM design launches.</li>
+                        <li>I led the development of multimedia automation solution to automate complex paltform validation test cases, deployed in production and responsible for code reviews and quality.</li>
+                        <li>I also improved system stability by debugging stress and stability issues in graphics IP and driver.</li>
                     </ul>
                 </div>
                 <div class="experience-item">
@@ -523,14 +523,14 @@
                         <ul>
                             <li><span class="skill-link" onclick="openPopup('python')">Python (Advanced)</span></li>
                             <li><span class="skill-link" onclick="openPopup('c-embedded')">C / Embedded C</span></li>
-                            <li><span class="skill-link" onclick="openPopup('git-cicd')">Git & CI/CD Pipelines</span></li>
+                            <li><span class="skill-link" onclick="openPopup('git-github')">Git & Github</span></li>
                             <li><span class="skill-link" onclick="openPopup('test-automation')">Test Automation Frameworks</span></li>
                         </ul>
                     </div>
                     <div class="skill-category">
                         <h3>Hardware & Protocols</h3>
                         <ul>
-                            <li><span class="skill-link" onclick="openPopup('displayport-hdmi')">DisplayPort 2.1 & HDMI 2.1</span></li>
+                            <li><span class="skill-link" onclick="openPopup('displayport-hdmi')">eDP 1.5, DisplayPort 2.1 & HDMI 2.1</span></li>
                             <li><span class="skill-link" onclick="openPopup('intel-display-power-saving')">Intel Display Power Saving Technology and eDP1.5</span></li>
                             <li><span class="skill-link" onclick="openPopup('directx-vulkan')">DirectX, Vulkan, & Graphics APIs</span></li>
                             <li><span class="skill-link" onclick="openPopup('embedded-systems')">Embedded and Realtime System Design</span></li>
@@ -544,7 +544,8 @@
                 <div class="popup-content">
                     <span class="close" onclick="closePopup('silicon-validation')">&times;</span>
                     <h2>Silicon Validation and Power-on</h2>
-                    <p>I've successfully brought up and validated three generations of Intel Graphics IPs, including the Core Ultra Series. By using pre-silicon emulation like FPGAs and Simics, I've been able to find and fix over 50 critical bugs before tape-out, which saved an estimated $1M in respin costs.</p>
+                    <p>I've successfully brought up and validated three generations of Intel Graphics IPs, including the Core Ultra Series 2. 
+I led the power-on and validation of the first Intel Graphics IP on Foveros 3D stacked silicon in Lakefield. My work involved debugging complex hardware interactions, ensuring compliance with specifications, and delivering stable software stacks to OEMs. Alder Lake built on the hybrid architecture foundation laid by Lakefield and brought big- and little-cores to desktop and DDR5. Lunar Lake pushes mobile AI, efficiency, and unified memory to new heights.</p>
                 </div>
             </div>
 
@@ -552,7 +553,7 @@
                 <div class="popup-content">
                     <span class="close" onclick="closePopup('system-integration')">&times;</span>
                     <h2>System Integration and Debug</h2>
-                    <p>I've designed and debugged the integration between the graphics driver and the Windows kernel for three major product lines. I've triaged over 1,000 complex system-level bugs with WinDbg, finding root causes in driver interactions, memory management, and power states. My work resulted in a 20% drop in stability issues reported by OEMs.</p>
+                    <p>I've designed and debugged the integration between the graphics driver and the Windows kernel. I've triaged complex system-level bugs with WinDbg, finding root causes in driver interactions, memory management, and power states. My work resulted in improvement in stability issues reported by OEMs. I built a personal desktop using Raptorlake  with Intel Arc A750 Intel Limited Edition Graphics</p>
                 </div>
             </div>
 
@@ -562,10 +563,9 @@
                     <h2>Windows Internals & WinDbg</h2>
                     <p>I'm proficient with WinDbg for debugging complex system crashes and graphics issues. I'm skilled at analyzing memory dumps to find root causes for challenging bugs, including:</p>
                     <ul>
-                        <li><strong>Bugcheck 3B (SYSTEM_SERVICE_EXCEPTION):</strong> This typically indicates that an exception happened while executing a routine that transitions from non-privileged to privileged code. It's often caused by dereferencing a NULL pointer or accessing a random incorrect address.</li>
-                        <li><strong>Bugcheck D1 (DRIVER_IRQL_NOT_LESS_OR_EQUAL):</strong> This indicates that a kernel-mode driver attempted to access pageable memory at a process IRQL that was too high. This is usually caused by a faulty driver.</li>
+                        I have triaged and debugged several TDR (Timeout Detection and Recovery) issues, which are common in graphics drivers. Some notable TDR bugchecks include:
                         <li><strong>TDR 116/117 (VIDEO_TDR_FAILURE/TIMEOUT_DETECTED):</strong> These indicate that the display driver failed to respond in a timely manner, and an attempt to reset the driver failed. This is a common issue with graphics drivers.</li>
-                        <li><strong>TDR 141 (VIDEO_ENGINE_TIMEOUT_DETECTED):</strong> This bugcheck indicates that one of the display engines failed to respond in a timely fashion.</li>
+                        <li><strong>TDR 141 (VIDEO_ENGINE_TIMEOUT_DETECTED):</strong> This bugcheck indicates that one of the render engines failed to respond in a timely fashion.</li>
                     </ul>
                     <p>My experience in debugging these issues has led to significant improvements in driver stability and overall system reliability.</p>
                     <p><strong>Citations:</strong></p>
@@ -579,12 +579,7 @@
                 <div class="popup-content">
                     <span class="close" onclick="closePopup('performance-stability')">&times;</span>
                     <h2>Stress and Stability Debug</h2>
-                    <p>I improve product reliability by applying Site Reliability Engineering (SRE) principles and using chaos engineering to proactively find weaknesses. I build continuous performance testing into CI/CD pipelines to get immediate feedback on code changes. I also design long-running stability tests to uncover subtle issues like memory leaks under production-like loads.</p>
-                    <p><strong>Citations:</strong></p>
-                    <ul>
-                        <li><a href="https://sre.google/" target="_blank">Google SRE</a></li>
-                        <li><a href="https://principlesofchaos.org/" target="_blank">Principles of Chaos Engineering</a></li>
-                    </ul>
+                    <p> I have experience in debugging stress and stability issues for graphics drivers. These issues are difficult to reproduce and debug. It requires setting up long runs to collect debug logs.</p>
                 </div>
             </div>
 
@@ -592,7 +587,7 @@
                 <div class="popup-content">
                     <span class="close" onclick="closePopup('python')">&times;</span>
                     <h2>Python (Advanced)</h2>
-                    <p>I built a Python automation framework from scratch to validate multimedia features. It has run over 18,000 tests and found nearly 1,000 unique bugs. I used `asyncio` to run tests in parallel, cutting the full test pass time from 48 hours down to 12.</p>
+                    <p> I have built a appium for windwos and winappdriver based modular and scalable automation framework in Python. This framework is scalable and modular allowing to extend to various tools and domains, it is agnostic to automation executor frameworks hence it easily integrates to several automation test management frameworks. I have used this framework to automate complex multimedia validation test cases, which were previously manual and time-consuming. The framework has been deployed in production and is used by multiple teams across Intel. The code is inclues unit tests such that each module can be tested and debugged independently. Due to its well thought architecute the load on the system to run this automation framework is very minimal which makes it suitable for power and performance validation. </p>
                 </div>
             </div>
 
@@ -600,20 +595,17 @@
                 <div class="popup-content">
                     <span class="close" onclick="closePopup('c-embedded')">&times;</span>
                     <h2>C / Embedded C</h2>
-                    <p>I have strong experience in C and Embedded C. I've worked with lightweight IoT protocols like MQTT and CoAP, and I understand the importance of security through secure boot and HSMs. I'm familiar with modern C/C++ standards and safety-critical coding standards like MISRA C.</p>
-                    <p><strong>Citations:</strong></p>
-                    <ul>
-                        <li><a href="https://www.misra.org.uk/" target="_blank">MISRA</a></li>
-                        <li><a href="https://www.iso.org/standard/68385.html" target="_blank">ISO 26262</a></li>
-                    </ul>
+                    <p>I have strong experience in C and Embedded C. I've worked with lightweight IoT protocols like MQTT and different microcontroller platforms.</p>
+                    <p>At IIT Bombay, I designed and built an embedded system for urban agriculture monitoring. Using an ARM Cortex-M4 and various sensors, I wrote the real-time firmware in C. I implemented a low-power sleep schedule that extended the battery life from just two days to over two weeks.</p>
                 </div>
             </div>
 
-            <div id="git-cicd" class="popup">
+            <div id="git-github" class="popup">
                 <div class="popup-content">
-                    <span class="close" onclick="closePopup('git-cicd')">&times;</span>
-                    <h2>Git & CI/CD Pipelines</h2>
-                    <p>I've implemented and managed CI/CD pipelines with Jenkins and Git for our graphics driver validation team. By automating the build, test, and deployment process, I cut manual work by 90% and enabled daily builds. This helped us find integration issues early and maintain a more stable codebase.</p>
+                    <span class="close" onclick="closePopup('git-github')">&times;</span>
+                    <h2>Git & Github</h2>
+                    <p>I have experience with Git and Github for version control and collaboration. I use Git for managing code changes, branching, and merging in my projects. I also leverage Github for code reviews, issue tracking, and continuous integration workflows.</p>
+               
                 </div>
             </div>
 
@@ -621,11 +613,12 @@
                 <div class="popup-content">
                     <span class="close" onclick="closePopup('test-automation')">&times;</span>
                     <h2>Test Automation Frameworks</h2>
-                    <p>I'm experienced with modern test automation. I'm interested in how AI can be used for self-healing tests and predictive analytics. I've worked with BDD and keyword-driven frameworks like Cucumber and Robot Framework, and I have experience testing APIs in microservices architectures.</p>
+                    <p> I have built a Python-based test automation framework that integrates with Appium for Windows and WinAppDriver. This framework is modular and scalable, allowing it to be extended to various tools and domains. It is agnostic to automation executor frameworks, making it easy to integrate with several automation test management frameworks.</p>
+
                     <p><strong>Citations:</strong></p>
                     <ul>
-                        <li><a href="https://www.selenium.dev/" target="_blank">Selenium</a></li>
-                        <li><a href="https://cucumber.io/" target="_blank">Cucumber</a></li>
+                        <li><a href="https://appium.io/docs/en/latest/" target="_blank">Appium </a></li>
+                        <li><a href="https://github.com/microsoft/WinAppDriver" target="_blank">WinAppDriver</a></li>
                     </ul>
                 </div>
             </div>
@@ -634,7 +627,8 @@
                 <div class="popup-content">
                     <span class="close" onclick="closePopup('displayport-hdmi')">&times;</span>
                     <h2>DisplayPort 2.1 & HDMI 2.1</h2>
-                    <p>I led the validation of DisplayPort 2.1 and HDMI 2.1 for Intel's latest integrated graphics. I created over 50 new tests for high-bandwidth scenarios like 8K@60Hz with DSC and gaming features like VRR. My work ensured we met VESA/HDMI standards and delivered a great experience on over 20 different monitors.</p>
+                    <p>I led the validation of eDP1.5, DisplayPort 2.1 and HDMI 2.1 for Intel's latest integrated graphics.I ensured compliance with the latest specifications, including support for high resolutions and refresh rates. </p>
+                    </p>
                 </div>
             </div>
 
@@ -642,7 +636,7 @@
                 <div class="popup-content">
                     <span class="close" onclick="closePopup('intel-display-power-saving')">&times;</span>
                     <h2>Intel Display Power Saving Technology and eDP1.5</h2>
-                    <p>I've optimized and validated Intel's Display Power Saving Technology (DPST) for several graphics generations, helping to cut display power consumption by 15-20% on mobile devices. I fine-tuned the algorithms to balance visual quality with battery life and ensured our hardware was fully compliant with the eDP1.5 spec for features like Panel Self Refresh.</p>
+                    <p>I've optimized and validated Intel's Display Power Saving Technology (DPST) for several graphics generations, helping to cut display power consumption on mobile devices. I ensured our hardware was fully compliant with the eDP1.5 spec for features like Panel Replay. I also validated features like Display Stream Compression (DSC), Variable Refresh Rate (VRR), LRR, HRR, DRR, DRRS, DMRRS, PR, LOBF, PSR, LACE, DPST, OPST, ELP, IIDT, ALRR </p>
                 </div>
             </div>
 
@@ -650,7 +644,7 @@
                 <div class="popup-content">
                     <span class="close" onclick="closePopup('directx-vulkan')">&times;</span>
                     <h2>DirectX, Vulkan, & Graphics APIs</h2>
-                    <p>I have a solid understanding of modern graphics APIs. I'm familiar with the benefits of low-level APIs like DirectX 12 and Vulkan, and I have experience with advanced features like real-time ray tracing (DXR) and mesh shaders. I also understand the complexities of explicit synchronization and memory management in Vulkan.</p>
+                    <p>I have a basic understanding of modern graphics APIs. I'm familiar with the benefits of low-level APIs like DirectX 12 and Vulkan, and I have experience with advanced features like real-time ray tracing (DXR) and mesh shaders.</p>
                     <p><strong>Citations:</strong></p>
                     <ul>
                         <li><a href="https://devblogs.microsoft.com/directx/" target="_blank">Microsoft DirectX Developer Blog</a></li>
