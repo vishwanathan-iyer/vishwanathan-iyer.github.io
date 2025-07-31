@@ -20,6 +20,7 @@
             --border-color: #00ff9b;
             --header-text-color: #ffffff;
             --nav-bg-color: #1f1f1f;
+            --terminal-bg: #1e1e1e;
         }
 
         body {
@@ -300,7 +301,7 @@
         }
 
         #terminal {
-            background-color: #1e1e1e;
+            background-color: var(--terminal-bg);
             border: 1px solid var(--primary-color);
             border-radius: 5px;
             padding: 15px;
@@ -496,6 +497,7 @@
                     document.documentElement.style.setProperty('--border-color', '#bb86fc');
                     document.documentElement.style.setProperty('--header-text-color', '#ffffff');
                     document.documentElement.style.setProperty('--nav-bg-color', '#1f1f1f');
+                    document.documentElement.style.setProperty('--terminal-bg', '#1e1e1e');
                     document.body.style.backgroundImage = 'linear-gradient(rgba(187, 134, 252, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(187, 134, 252, 0.05) 1px, transparent 1px)';
                     document.body.style.animation = 'background-pan 60s linear infinite';
                 } else if (selectedTheme === 'light') {
@@ -506,6 +508,7 @@
                     document.documentElement.style.setProperty('--border-color', '#007bff');
                     document.documentElement.style.setProperty('--header-text-color', '#000000');
                     document.documentElement.style.setProperty('--nav-bg-color', '#f8f9fa');
+                    document.documentElement.style.setProperty('--terminal-bg', '#e9ecef');
                     document.body.style.backgroundImage = 'linear-gradient(rgba(0, 123, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 123, 255, 0.05) 1px, transparent 1px)';
                     document.body.style.animation = 'background-pan 60s linear infinite';
                 } else {
@@ -517,6 +520,7 @@
                     document.documentElement.style.setProperty('--border-color', '#00ff9b');
                     document.documentElement.style.setProperty('--header-text-color', '#ffffff');
                     document.documentElement.style.setProperty('--nav-bg-color', '#1f1f1f');
+                    document.documentElement.style.setProperty('--terminal-bg', '#1e1e1e');
                     document.body.style.backgroundImage = 'linear-gradient(rgba(0, 255, 155, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 155, 0.05) 1px, transparent 1px)';
                     document.body.style.animation = 'background-pan 60s linear infinite';
                 }
